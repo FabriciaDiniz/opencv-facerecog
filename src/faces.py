@@ -4,8 +4,8 @@ import pickle
 
 # cascades de reconhecimento; testar outros depois
 face_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_eye.xml')
-smile_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_smile.xml')
+# eye_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_eye.xml')
+# smile_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_smile.xml')
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("trainer.yml")

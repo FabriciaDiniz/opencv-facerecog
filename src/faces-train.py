@@ -29,11 +29,11 @@ for root, dirs, files in os.walk(image_dir):
 			id_ = label_ids[label]
 
 			pil_image = Image.open(path).convert("L")  #converte pra escala de cinza
-			size = (550, 550)
+			size = (400, 400)
 			final_image = pil_image.resize(size, Image.ANTIALIAS)
 			image_array = np.array(final_image, "uint8")  #converte imagem para array
 
-			faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=5)
+			faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=5, minSize=(20, 20))
 
 			for (x, y, w, h) in faces:
 				roi = image_array[y:y+h, x:x+w]
